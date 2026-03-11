@@ -30,6 +30,11 @@ app.get('/users', (req, res) => {
   res.json(users);
 });
 
+app.get('/users/:id', (req, res) => {
+  const { id } = req.params;
+  res.json({ message: `You requested user with ID: ${id}`, id: id });
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
