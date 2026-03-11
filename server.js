@@ -21,6 +21,15 @@ app.get('/contact', (req, res) => {
   res.send('Contact us at: hello@myexpressapp.com');
 });
 
+app.get('/users', (req, res) => {
+  const users = [
+    { id: 1, name: 'Alice' },
+    { id: 2, name: 'Bob' },
+    { id: 3, name: 'Charlie' },
+  ];
+  res.json(users);
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
