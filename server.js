@@ -35,6 +35,14 @@ app.get('/users/:id', (req, res) => {
   res.json({ message: `You requested user with ID: ${id}`, id: id });
 });
 
+app.get('/search', (req, res) => {
+  const { name } = req.query;
+  if (!name) {
+    return res.send('Please provide a name. Example: /search?name=alice');
+  }
+  res.send(`You searched for: ${name}`);
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
